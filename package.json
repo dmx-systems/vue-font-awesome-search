@@ -1,0 +1,12 @@
+{
+  "name": "vue-font-awesome-search",
+  "version": "0.1.0",
+  "description": "A Vue.js component for searching Font Awesome icons",
+  "author": "Jörg Richter",
+  "license": "MIT",
+  "main": "src/components/font-awesome-search.vue",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jri/vue-font-awesome-search.git"
+  }
+}
