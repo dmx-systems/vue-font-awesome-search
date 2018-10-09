@@ -1,8 +1,7 @@
 <template>
   <div class="font-awesome-search">
-    <el-button v-for="icon in icons" :key="icon.id" @click="click(icon)">
-      <span :class="['icon', 'fa', `fa-${icon.id}`]"></span>
-      <span>{{icon.name}}</span>
+    <el-button v-for="icon in icons" :class="['fa', `fa-${icon.id}`]" :title="icon.name" :key="icon.id"
+      @click="click(icon)">
     </el-button>
   </div>
 </template>
@@ -31,7 +30,11 @@ export default {
 </script>
 
 <style>
-.font-awesome-search .icon{
-  margin-right: 4px;
+.font-awesome-search .el-button {
+  font-size: 24px !important;
+  color: var(--color-topic-icon);
+  margin-left: 0;
+  margin-right: 3px;
+  margin-bottom: 3px;
 }
 </style>
