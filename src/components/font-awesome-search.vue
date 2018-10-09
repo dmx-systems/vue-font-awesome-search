@@ -1,6 +1,7 @@
 <template>
   <div class="font-awesome-search">
-    <el-button v-for="icon in icons" :class="['fa', `fa-${icon.id}`]" :title="icon.name" :key="icon.id"
+    <el-input v-model="search" placeholder="Search icons…"></el-input>
+    <el-button v-for="icon in icons" v-if="match(icon)" :class="['fa', `fa-${icon.id}`]" :title="icon.name" :key="icon.id"
       @click="click(icon)">
     </el-button>
   </div>
@@ -17,11 +18,26 @@ export default {
 
   data () {
     return {
-      icons
+      icons,
+      search: ''
+    }
+  },
+
+  computed: {
+    _search () {
+      return this.search.toLowerCase()
     }
   },
 
   methods: {
+
+    match (icon) {
+      // Note: all filters and aliases are lowercase already
+      return icon.name.toLowerCase().includes(this._search) ||
+        icon.filter  && icon.filter.some(s => s.includes(this._search)) ||
+        icon.aliases && icon.aliases.some(s => s.includes(this._search))
+    },
+
     click (icon) {
       this.$emit('icon-select', icon)
     }
@@ -30,6 +46,10 @@ export default {
 </script>
 
 <style>
+.font-awesome-search .el-input {
+  margin-bottom: 2em;
+}
+
 .font-awesome-search .el-button {
   font-size: 24px !important;
   color: var(--color-topic-icon);
