@@ -53,7 +53,7 @@ export default {
 .font-awesome-search .el-button {
   font-size: 24px !important;
   color: var(--color-topic-icon);
-  margin-left: 0;
+  margin-left: 0 !important;    /* Element UI default is 10px */
   margin-right: 3px;
   margin-bottom: 3px;
 }
