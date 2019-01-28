@@ -3,7 +3,7 @@
   "version": "0.2.0",
   "description": "A Vue.js component for searching Font Awesome icons",
   "author": "Jörg Richter",
-  "license": "MIT",
+  "license": "GPL-3.0-or-later",
   "main": "src/components/font-awesome-search.vue",
   "repository": {
     "type": "git",
