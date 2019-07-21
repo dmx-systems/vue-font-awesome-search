@@ -4,6 +4,10 @@ A Vue.js component for searching Font Awesome icons
 
 ## Version History
 
+**1.1** -- Jul 22, 2019
+
+* Change license to `AGPL-3.0`
+
 **1.0** -- Jan 29, 2019
 
 * Change license to `GPL-3.0-or-later`
@@ -18,4 +22,4 @@ A Vue.js component for searching Font Awesome icons
 
 ------------
 Jörg Richter  
-Jan 29, 2019
+Jul 22, 2019
