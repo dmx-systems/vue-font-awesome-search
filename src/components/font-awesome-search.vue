@@ -1,8 +1,8 @@
 <template>
   <div class="font-awesome-search">
     <el-input v-model="search" placeholder="Search icons…"></el-input>
-    <el-button v-for="icon in icons" v-if="match(icon)" :class="['fa', `fa-${icon.id}`]" :title="icon.name" :key="icon.id"
-      @click="click(icon)">
+    <el-button v-for="icon in icons" v-if="match(icon)" :class="['fa', `fa-${icon.id}`]" :title="icon.name"
+      :key="icon.id" @click="click(icon)">
     </el-button>
   </div>
 </template>
@@ -33,7 +33,7 @@ export default {
 
     match (icon) {
       // Note: all filters and aliases are lowercase already
-      return icon.name.toLowerCase().includes(this._search) ||
+      return icon.name.toLowerCase().includes(this._search) ||                    /* eslint no-mixed-operators: "off" */
         icon.filter  && icon.filter.some(s => s.includes(this._search)) ||
         icon.aliases && icon.aliases.some(s => s.includes(this._search))
     },
