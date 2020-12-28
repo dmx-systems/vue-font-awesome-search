@@ -1,7 +1,7 @@
 <template>
   <div class="font-awesome-search">
     <el-input v-model="search" placeholder="Search icons…"></el-input>
-    <el-button v-for="icon in icons" v-if="match(icon)" :class="['fa', `fa-${icon.id}`]" :title="icon.name"
+    <el-button v-for="icon in matchedIcons" :class="['fa', `fa-${icon.id}`]" :title="icon.name"
       :key="icon.id" @click="click(icon)">
     </el-button>
   </div>
@@ -12,10 +12,6 @@ import icons from '../icons'
 
 export default {
 
-  created () {
-    console.log('font-awesome-search created', this.icons)
-  },
-
   data () {
     return {
       icons,
@@ -24,8 +20,13 @@ export default {
   },
 
   computed: {
+
     _search () {
       return this.search.toLowerCase()
+    },
+
+    matchedIcons () {
+      return icons.filter(icon => this.match(icon))
     }
   },
 
