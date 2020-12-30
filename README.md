@@ -4,6 +4,12 @@ A Vue.js component for searching Font Awesome icons
 
 ## Version History
 
+**1.1.1** -- Dec 30, 2020
+
+* Chore:
+    * Adapt URLs to `github.com/dmx-systems`
+    * Code run through `eslint`
+
 **1.1** -- Jul 22, 2019
 
 * Change license to `AGPL-3.0`
@@ -22,4 +28,4 @@ A Vue.js component for searching Font Awesome icons
 
 ------------
 Jörg Richter  
-Jul 22, 2019
+Dec 30, 2020
